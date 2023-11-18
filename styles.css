@@ -1,0 +1,7 @@
+input#visaCard, #masterCard, #dinersCard, #amexCard {    
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+ }

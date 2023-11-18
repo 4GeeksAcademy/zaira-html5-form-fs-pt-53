@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body class="pt-5 d-flex">
+    <!-- container for complete form-->
+    <form class="container text-left border rounded-2 p-0 needs-validation" action="/submit" method="post">
+
+        <!-- header container -->
+        <div class="m-0 py-2 px-3 fs-1 fw-bold border-bottom bg-body-secondary">
+            Payment form example
+        </div>
+
+        <!-- second container: alert, card number, cvc and amount -->
+        <div class="p-3">
+            <!-- alert -->
+            <div class="alert alert-danger py-3 px-4 fs-4 fw-medium" role="alert">
+                Some fields are missing
+            </div>
+
+            <!-- card #, cvc, ampount  -->
+            <div class="row d-flex">
+                <fieldset class="col-5 fw-medium">
+                    <label for="cardNumber" class="form-label">Card Number #</label>
+                    <input type="text" minlength="13" pattern="[0-9]{13,16}" class="form-control" placeholder="xxxxxxxxxxxxxxxx"
+                        id="cardNumber" required>
+                </fieldset>
+                <fieldset class="col-3 fw-medium">
+                    <label for="cvc" class="form-label">CVC #</label>
+                    <input type="text" pattern="[0-9]{3}" class="form-control" placeholder="000"
+                        id="cvc" required>
+                </fieldset>
+                <fieldset class="col-4 fw-medium">
+                    <label for="amount" class="form-label">Amount</label>
+                    <div class="input-group">
+                        <div class="input-group-text bg-white border border-0 fw-medium m-0 px-1">$</div>
+                        <input type="number" pattern="\d+([.,]\d{1,2})?" class="form-control" placeholder="Amount" id="amount" required>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- third container: divided in two: -->
+        <div class="row d-flex p-3 pb-5">
+
+            <!-- Left: First Name, City, Cards accepted -->
+            <div class="col-6">
+
+                <fieldset class="col-12 fw-medium pb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="firstName"
+                        required>
+                </fieldset>
+
+                <fieldset class="col-12 fw-medium pb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="city" required>
+                </fieldset>
+
+                <!-- acceptedCards -->
+                <div class="row mx-1">
+                    <label for="city" class="form-label fw-medium mx-0 px-0">We accept:</label>
+                    <div class="col-auto  d-flex bg-secondary p-2 rounded-2 justify-content-start gap-3 small flex-wrap">
+
+                        <div class="col-auto d-flex">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="masterCard">
+                            <label class="" for="masterCard"> <img src="/assets/icons8-mastercard-100.png" width="20px"
+                                    height="15px"></label>
+                        </div>
+                        <div class="col-auto d-flex">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="visaCard">
+                            <label for="visaCard"> <img src="/assets/icons8-visa-96.png" width="20px" height="15px"></label>
+                        </div>
+                        <div class="col-auto d-flex">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="dinersCard">
+                            <label for="dinersCard"> <img src="/assets/icons8-diners-club-internacional-100.png" width="20px" height="15px"></label>
+                        </div>
+                        <div class="col-auto d-flex">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="amexCard">
+                            <label for="amexCard"> <img src="/assets/icons8-amex-104.png" width="20px" height="15px"></label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right: Last Name, State, Postal Code, message -->
+            <div class="col-6">
+
+                <fieldset class="col-12 fw-medium pb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="lastName" required>
+                </fieldset>
+                <div class="row d-flex">
+                    <fieldset class="col-6 fw-medium pb-3">
+                        <label for="state" class="form-label">State</label>
+                        <select class="form-select form-control" placeholder="" id="state" name="states" required>
+                            <option value="" disabled selected hidden id="pickState">Pick a state</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="col-6 fw-medium pb-3">
+                        <label for="state" class="form-label">Postal Code</label>
+                        <input type="text" pattern="(\d{5}([\-]\d{4})?)" class="form-control" placeholder="" id="state"
+                            required>
+                    </fieldset>
+                </div>
+                <fieldset class="col-12 fw-medium">
+                    <label for="message"> Message</label>
+                    <textarea class="col-12 fw-medium border no-border rounded-2" placeholder="" id="message" required>
+
+                    </textarea>
+                    <div id="message-help" class="form-text">Add any notes here.</div>
+            </div>
+            </fieldset>
+
+        </div>
+
+        <!-- bottom container: cancel and send button  -->
+        <div class="m-0 p-3 fs-1 border-top bg-body-secondary">
+            <div class="d-flex gap-2 justify-content-end">
+                <button class="btn btn-secondary me-md-2 fw-medium" type="submit">Cancel</button>
+                <button class="btn btn-primary fw-medium" type="submit">Send</button>
+            </div>
+        </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
