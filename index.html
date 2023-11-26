@@ -30,12 +30,12 @@
             <div class="row d-flex">
                 <fieldset class="col-5 fw-medium">
                     <label for="cardNumber" class="form-label">Card Number #</label>
-                    <input type="text" minlength="13" pattern="[0-9]{13,16}" class="form-control" placeholder="xxxxxxxxxxxxxxxx"
+                    <input type="number" inputmode="numeric" minlength="13" pattern="^[0-9]{13,16}$" class="form-control" placeholder="xxxxxxxxxxxxxxxx"
                         id="cardNumber" required>
                 </fieldset>
                 <fieldset class="col-3 fw-medium">
                     <label for="cvc" class="form-label">CVC #</label>
-                    <input type="text" pattern="[0-9]{3}" class="form-control" placeholder="000"
+                    <input type="number" inputmode="numeric" pattern="[0-9]{3}" class="form-control" placeholder="000"
                         id="cvc" required>
                 </fieldset>
                 <fieldset class="col-4 fw-medium">
@@ -56,13 +56,13 @@
 
                 <fieldset class="col-12 fw-medium pb-3">
                     <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="firstName"
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+[^0-9]+" class="form-control" placeholder="" id="firstName"
                         required>
                 </fieldset>
 
                 <fieldset class="col-12 fw-medium pb-3">
                     <label for="city" class="form-label">City</label>
-                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="city" required>
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+[^0-9]+" class="form-control" placeholder="" id="city" required>
                 </fieldset>
 
                 <!-- acceptedCards -->
@@ -71,20 +71,20 @@
                     <div class="col-auto  d-flex bg-secondary p-2 rounded-2 justify-content-start gap-3 small flex-wrap">
 
                         <div class="col-auto d-flex">
-                            <input type="radio" class="form-check-input me-1" placeholder="" id="masterCard">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="masterCard" name="cardType">
                             <label class="" for="masterCard"> <img src="/assets/icons8-mastercard-100.png" width="20px"
                                     height="15px"></label>
                         </div>
                         <div class="col-auto d-flex">
-                            <input type="radio" class="form-check-input me-1" placeholder="" id="visaCard">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="visaCard" name="cardType">
                             <label for="visaCard"> <img src="/assets/icons8-visa-96.png" width="20px" height="15px"></label>
                         </div>
                         <div class="col-auto d-flex">
-                            <input type="radio" class="form-check-input me-1" placeholder="" id="dinersCard">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="dinersCard" name="cardType">
                             <label for="dinersCard"> <img src="/assets/icons8-diners-club-internacional-100.png" width="20px" height="15px"></label>
                         </div>
                         <div class="col-auto d-flex">
-                            <input type="radio" class="form-check-input me-1" placeholder="" id="amexCard">
+                            <input type="radio" class="form-check-input me-1" placeholder="" id="amexCard" name="cardType">
                             <label for="amexCard"> <img src="/assets/icons8-amex-104.png" width="20px" height="15px"></label>
                         </div>
 
@@ -98,7 +98,7 @@
 
                 <fieldset class="col-12 fw-medium pb-3">
                     <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+" class="form-control" placeholder="" id="lastName" required>
+                    <input type="text" pattern="[A-Za-záéíóúüÜñÑ\s'-]+ [^0-9]+" class="form-control" placeholder="" id="lastName" required>
                 </fieldset>
                 <div class="row d-flex">
                     <fieldset class="col-6 fw-medium pb-3">
